@@ -1,6 +1,0 @@
-[build]
-  # 넷플리파이가 깃허브 코드를 받자마자 파이썬 스크립트를 자동 실행합니다.
-  command = "python3 build.py"
-  
-  # 스크립트가 만든 dist 폴더를 최종 화면에 띄웁니다.
-  publish = "dist"
