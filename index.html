@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="naver-site-verification" content="네이버_소유권_확인_코드_여기에_입력">
+  <title>서경인케어맵 | 서울·경기·인천 웰니스 지도 플랫폼</title>
+  <meta name="description" content="서울, 경기, 인천 지역의 스파, 네일, 홈케어 등 지역 기반 웰니스 업종을 한눈에 비교할 수 있는 생활 케어 정보 플랫폼입니다.">
+  <link rel="canonical" href="https://seogyeongIn-care.netlify.app/">
+  <link rel="stylesheet" href="/assets/style.css">
+  
+  <!-- JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "서경인케어맵",
+    "url": "https://seogyeongIn-care.netlify.app/",
+    "description": "서울, 경기, 인천 지역 기반 웰니스 및 방문 바디케어 정보 플랫폼"
+  }
+  </script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="logo" href="/">서경인케어맵</a>
+      <div class="topCta">
+        <a class="call" href="tel:050712803296">전화문의</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">LOCAL WELLNESS MAP</div>
+        <h1>서경인 지역별 웰니스 업종을<br>지도처럼 찾는 플랫폼</h1>
+        <p>지역별 웰니스·홈케어 업종을 한눈에 보는 생활 케어 플랫폼. 홈케어 안에서 방문 바디케어 관련 정보를 자연스럽게 확인합니다.</p>
+      </div>
+    </section>
+
+    <!-- 메인 카카오 지도 영역 -->
+    <section class="section kakaoMapSec" id="homecare-map">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <h2>서경인 전체 매장 지도</h2>
+            <p class="lead">카카오 지도에서 홈케어 등록 지역 위치를 확인할 수 있습니다. 마커를 누르면 상세 페이지로 이동합니다.</p>
+          </div>
+        </div>
+        <div class="kakaoMapGrid">
+          <div class="kakaoMapBox" id="kakaoHomecareMap">
+            <div class="mapNeedKey">카카오 지도 로딩중입니다.</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 메인 페이지용 카카오 맵 스크립트 -->
+      <script>
+      (function(){
+        // ★ 여기에 새 카카오 키가 적용되었습니다.
+        var key = "d5bf2dca2a823214948b23ac0cdacbe5"; 
+        
+        // 지도에 표시할 주요 지역 핀(마커) 목록
+        var points = [
+          {region: "서울 강남", slug: "seoul-gangnam", brand: "강남 방문케어", lat: 37.4979, lng: 127.0276},
+          {region: "서울 송파", slug: "seoul-songpa", brand: "송파 방문케어", lat: 37.5145, lng: 127.1059},
+          {region: "서울 홍대입구", slug: "seoul-hongdae", brand: "홍대 방문케어", lat: 37.5572, lng: 126.9245},
+          {region: "서울 중구 장충동", slug: "jangchung", brand: "장충동 방문케어", lat: 37.5621, lng: 127.0044}
+        ];
+
+        var box = document.getElementById('kakaoHomecareMap');
+        if(!box) return;
+
+        function load(cb){
+          if(window.kakao && window.kakao.maps){ kakao.maps.load(cb); return; }
+          var sc = document.createElement('script');
+          sc.src = 'https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=' + encodeURIComponent(key) + '&v=' + Date.now();
+          sc.onload = function(){ kakao.maps.load(cb); };
+          document.head.appendChild(sc);
+        }
+
+        load(function(){
+          box.innerHTML = '';
+          var center = new kakao.maps.LatLng(37.5665, 126.9780); // 서울 중심 좌표
+          var map = new kakao.maps.Map(box, {center: center, level: 8});
+          map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
+
+          points.forEach(function(x){
+            var pos = new kakao.maps.LatLng(x.lat, x.lng);
+            var marker = new kakao.maps.Marker({position: pos, map: map, title: x.brand, clickable: true});
+            
+            var label = document.createElement('a');
+            label.className = 'mapStoreLabel vip';
+            label.href = '/homecare/' + x.slug + '.html';
+            label.innerHTML = '<b>' + x.brand + '</b><span>' + x.region + '</span>';
+            
+            var overlay = new kakao.maps.CustomOverlay({
+              position: pos, content: label, yAnchor: 1.75, zIndex: 4
+            });
+            overlay.setMap(map);
+
+            kakao.maps.event.addListener(marker, 'click', function(){
+              location.href = '/homecare/' + x.slug + '.html';
+            });
+          });
+        });
+      })();
+      </script>
+    </section>
+  </main>
+</body>
+</html>

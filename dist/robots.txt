@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seogyeongIn-care.netlify.app/sitemap.xml

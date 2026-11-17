@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>서울 신림 한국미인테라피 | 출장마사지 · 서경인케어맵</title>
+  <meta name="description" content="서울 신림 방문 바디케어 상세 정보">
+  <link rel="canonical" href="https://seogyeongIn-care.netlify.app/homecare/seoul-sillim.html">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "한국미인테라피",
+    "telephone": "0507-1280-3140",
+    "priceRange": "₩80,000~",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "서울시 관악구"
+    },
+    "description": "서울시 관악구 출장마사지 및 방문 바디케어 전문",
+    "url": "https://seogyeongIn-care.netlify.app/homecare/seoul-sillim.html"
+}
+  </script>
+</head>
+<body>
+  <!-- 상단 정보 영역 -->
+  <section class="areaHero detail">
+    <div class="wrap">
+      <div class="detailTop">
+        <div>
+          <span class="tier vip">VIP</span>
+          <h1>한국미인테라피</h1>
+          <p>서울시 관악구 생활권에서 방문 바디케어와 피로관리 정보를 찾는 분들을 위한 지역 파트너입니다. 신림 출장마사지를 비교할 때 필요한 정보를 확인하세요.</p>
+        </div>
+        <div class="priceBox">
+          <span>기본요금</span><b>80,000원부터</b>
+          <div class="priceActions">
+            <a href="tel:050712803140">전화</a>
+            <a href="sms:050712803140">문자</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 카카오 지도 영역 -->
+  <section class="section compact storeMapSec" id="store-map">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>한국미인테라피 매장 지도</h2>
+          <p class="lead">서울 신림 기준 위치를 카카오 지도에서 확인할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="storeMapGrid">
+        <div class="kakaoMapBox storeMapBox" id="storeMap_seoul-sillim">
+          <div class="mapNeedKey">카카오 지도 로딩중입니다.</div>
+        </div>
+        <aside class="mapInfo storeMapInfo">
+          <span class="tier vip">VIP</span>
+          <h3>한국미인테라피</h3>
+          <p>서울 신림 · 서울시 관악구 신림로 340 인근</p>
+          <div class="mapInfoActions">
+            <a class="btn primary" href="tel:050712803140">전화</a>
+            <a class="btn" href="sms:050712803140">문자</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+    
+    <!-- 카카오 맵 구동 스크립트 -->
+    <script>
+    (function(){
+      // ★ 여기에 카카오 JavaScript 키를 입력하세요.
+      var key="d5bf2dca2a823214948b23ac0cdacbe5"; 
+      var box=document.getElementById("storeMap_seoul-sillim");
+      if(!box) return;
+      
+      function load(cb){
+        if(window.kakao&&window.kakao.maps){kakao.maps.load(cb);return;}
+        var sc=document.createElement('script');
+        sc.src='https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey='+encodeURIComponent(key)+'&v='+Date.now();
+        sc.onload=function(){kakao.maps.load(cb);};
+        document.head.appendChild(sc);
+      }
+      
+      load(function(){
+        box.innerHTML='';
+        var pos=new kakao.maps.LatLng(37.4842, 126.9297);
+        var map=new kakao.maps.Map(box,{center:pos,level:4});
+        map.addControl(new kakao.maps.ZoomControl(),kakao.maps.ControlPosition.RIGHT);
+        
+        var marker=new kakao.maps.Marker({position:pos,map:map,title:"한국미인테라피",clickable:true});
+        var label=document.createElement('a');
+        label.className='mapStoreLabel detailLabel vip';
+        label.innerHTML='<b>한국미인테라피</b><span>상세페이지 이동</span>';
+        
+        new kakao.maps.CustomOverlay({position:pos,content:label,yAnchor:1.75,zIndex:5}).setMap(map);
+      });
+    })();
+    </script>
+  </section>
+</body>
+</html>
