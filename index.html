@@ -9,7 +9,6 @@
   <link rel="canonical" href="https://seogyeongIn-care.netlify.app/">
   <link rel="stylesheet" href="/assets/style.css">
   
-  <!-- JSON-LD 구조화 데이터 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,18 +54,15 @@
         </div>
       </div>
       
-      <!-- 메인 페이지용 카카오 맵 스크립트 -->
       <script>
       (function(){
-        // ★ 여기에 새 카카오 키가 적용되었습니다.
         var key = "d5bf2dca2a823214948b23ac0cdacbe5"; 
         
-        // 지도에 표시할 주요 지역 핀(마커) 목록
         var points = [
-          {region: "서울 강남", slug: "seoul-gangnam", brand: "강남 방문케어", lat: 37.4979, lng: 127.0276},
-          {region: "서울 송파", slug: "seoul-songpa", brand: "송파 방문케어", lat: 37.5145, lng: 127.1059},
-          {region: "서울 홍대입구", slug: "seoul-hongdae", brand: "홍대 방문케어", lat: 37.5572, lng: 126.9245},
-          {region: "서울 중구 장충동", slug: "jangchung", brand: "장충동 방문케어", lat: 37.5621, lng: 127.0044}
+          {region: "서울 강남", slug: "seoul-gangnam", brand: "퀸즈홈테라피", lat: 37.4979, lng: 127.0276},
+          {region: "서울 송파", slug: "seoul-songpa", brand: "한국미인테라피", lat: 37.5145, lng: 127.1059},
+          {region: "서울 홍대입구", slug: "seoul-hongdae", brand: "오늘밤테라피", lat: 37.5572, lng: 126.9245},
+          {region: "서울 중구 장충동", slug: "jangchung", brand: "주주테라피", lat: 37.5621, lng: 127.0044}
         ];
 
         var box = document.getElementById('kakaoHomecareMap');
@@ -82,7 +78,7 @@
 
         load(function(){
           box.innerHTML = '';
-          var center = new kakao.maps.LatLng(37.5665, 126.9780); // 서울 중심 좌표
+          var center = new kakao.maps.LatLng(37.5665, 126.9780);
           var map = new kakao.maps.Map(box, {center: center, level: 8});
           map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 
@@ -108,6 +104,119 @@
       })();
       </script>
     </section>
+
+    <!-- 업종 카테고리 -->
+    <section class="section">
+      <div class="wrap">
+        <h2>업종 카테고리</h2>
+        <div class="grid catgrid">
+          <a class="card" href="/category/spa.html">
+            <span class="badge">CATEGORY</span>
+            <h3>스파</h3>
+            <p>휴식, 온열, 아로마, 릴렉스 중심의 스파 정보를 지역별로 정리합니다.</p>
+          </a>
+          <a class="card" href="/category/nail.html">
+            <span class="badge">CATEGORY</span>
+            <h3>네일</h3>
+            <p>네일아트, 패디, 손발 관리 등 지역 네일 업종 정보를 모읍니다.</p>
+          </a>
+          <a class="card" href="/category/homecare.html">
+            <span class="badge">CATEGORY</span>
+            <h3>홈케어</h3>
+            <p>샵 방문이 어려운 분들을 위한 방문 홈케어, 바디케어, 출장마사지 관련 정보를 자연스럽게 안내합니다.</p>
+          </a>
+          <a class="card" href="/category/esthetic.html">
+            <span class="badge">CATEGORY</span>
+            <h3>에스테틱</h3>
+            <p>피부관리, 페이스 케어, 림프 순환 등 지역 에스테틱 정보를 정리합니다.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP 추천 목록 -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div>
+            <h2>VIP 홈케어 추천 목록</h2>
+            <p class="lead">24시간 운영 VIP 업체를 3개씩 자동 로테이션으로 보여드립니다. 기본요금은 모든 업체 80,000원부터입니다.</p>
+          </div>
+          <a class="textlink" href="/area/gyeonggi-homecare.html">전체 보기</a>
+        </div>
+        <div class="shopList rollingShops" data-visible="3">
+          <article class="shop wide">
+            <a class="shopMain" href="/homecare/seoul-gangnam.html">
+              <div class="shopTop"><span class="tier vip">VIP</span><span class="stats">24시간 운영 · 후기 42</span></div>
+              <h3>퀸즈홈테라피</h3>
+              <p class="addr">서울시 강남구 테헤란로 152 인근</p>
+              <p class="desc">홈케어 바디케어 · 강남 생활권</p>
+              <div class="shopFoot"><b>기본요금 80,000원부터</b><span>상세 상담</span></div>
+            </a>
+            <div class="shopActions"><a href="tel:050712803296">전화</a><a href="sms:050712803296">문자</a></div>
+          </article>
+          <article class="shop wide">
+            <a class="shopMain" href="/homecare/seoul-songpa.html">
+              <div class="shopTop"><span class="tier vip">VIP</span><span class="stats">24시간 운영 · 후기 51</span></div>
+              <h3>한국미인테라피</h3>
+              <p class="addr">서울시 송파구 올림픽로 300 인근</p>
+              <p class="desc">방문 바디케어 · 잠실·방이 생활권</p>
+              <div class="shopFoot"><b>기본요금 80,000원부터</b><span>상세 상담</span></div>
+            </a>
+            <div class="shopActions"><a href="tel:050712803140">전화</a><a href="sms:050712803140">문자</a></div>
+          </article>
+          <article class="shop wide">
+            <a class="shopMain" href="/homecare/seoul-hongdae.html">
+              <div class="shopTop"><span class="tier vip">VIP</span><span class="stats">24시간 운영 · 후기 49</span></div>
+              <h3>오늘밤테라피</h3>
+              <p class="addr">서울시 마포구 양화로 160 인근</p>
+              <p class="desc">방문 아로마 케어 · 홍대입구 생활권</p>
+              <div class="shopFoot"><b>기본요금 80,000원부터</b><span>상세 상담</span></div>
+            </a>
+            <div class="shopActions"><a href="tel:050712803199">전화</a><a href="sms:050712803199">문자</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 하단 배너 -->
+    <section style="max-width:1180px;margin:24px auto;padding:24px;background:#edf6f2;border-radius:20px">
+      <h2>서울·경기·인천·평택·천안 마사지</h2>
+      <p>시·군·구·읍·면·동별 안내에서 이용 방식과 문의 전 확인사항을 살펴보세요.</p>
+      <a href="/massage/" style="display:inline-block;padding:12px 20px;background:#215d62;color:white;border-radius:12px">지역 마사지 찾기 →</a>
+    </section>
+
   </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <b>서경인케어맵</b><br>
+      스파, 네일, 홈케어 등 지역 기반 웰니스 업종을 한눈에 비교할 수 있는 생활 케어 정보 플랫폼입니다.<br>
+      문의 0507-1280-3296
+    </div>
+  </footer>
+
+  <!-- 롤링 업체 스크립트 -->
+  <script>
+  (function(){
+    document.querySelectorAll('.rollingShops').forEach(function(list){
+      var cards=Array.from(list.children).filter(function(el){return el.classList&&el.classList.contains('shop')});
+      var size=parseInt(list.getAttribute('data-visible')||'3',10);
+      if(cards.length<=size)return;
+      var page=0,total=Math.ceil(cards.length/size);
+      function show(){
+        cards.forEach(function(card,i){
+          var on=Math.floor(i/size)===page;
+          card.classList.toggle('is-hidden',!on);
+          card.classList.toggle('is-rolling-active',on);
+        });
+        list.setAttribute('data-page',(page+1)+' / '+total);
+        page=(page+1)%total;
+      }
+      show();
+      setInterval(show,3600);
+    });
+  })();
+  </script>
 </body>
 </html>
