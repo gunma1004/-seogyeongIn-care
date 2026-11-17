@@ -226,3 +226,17 @@ sitemap_xml += "\n</urlset>"
 with open('dist/sitemap.xml', 'w', encoding='utf-8') as f:
     f.write(sitemap_xml)
     print("생성 완료: dist/sitemap.xml")
+
+    import shutil
+
+# --- 기존 사이트맵 생성 코드 아래에 추가 ---
+
+# 5. 디자인(CSS) 및 스크립트 자산(assets) 폴더 자동 복사
+if os.path.exists('assets'):
+    # 이미 dist/assets 폴더가 있다면 삭제 후 덮어쓰기
+    if os.path.exists('dist/assets'):
+        shutil.rmtree('dist/assets')
+    shutil.copytree('assets', 'dist/assets')
+    print("생성 완료: dist/assets/ (디자인 파일 복사 완료)")
+else:
+    print("경고: 원본 assets 폴더를 찾을 수 없습니다. CSS가 적용되지 않습니다.")

@@ -1,0 +1,105 @@
+/* 기본 초기화 및 폰트 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.6; color: #333; background: #f9fbfb; word-break: keep-all; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+
+/* 공통 레이아웃 */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 60px 0; }
+.section.compact { padding: 30px 0; }
+.sectionHead { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+.sectionHead h2 { font-size: 24px; color: #1a1a1a; margin-bottom: 8px; }
+.sectionHead .lead { color: #666; font-size: 15px; }
+
+/* 헤더 영역 */
+.top { background: #fff; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 100; }
+.top .nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { font-size: 22px; font-weight: bold; color: #215d62; }
+.menu { display: flex; gap: 24px; }
+.menu a { font-weight: 500; font-size: 16px; transition: color 0.2s; }
+.menu a:hover { color: #215d62; }
+.topCta a { display: inline-block; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; margin-left: 8px; }
+.topCta .call { background: #215d62; color: #fff; }
+.topCta .sms { background: #edf6f2; color: #215d62; }
+
+/* 히어로 (메인 배너) 영역 */
+.hero, .areaHero { background: #215d62; color: #fff; padding: 80px 0; text-align: center; }
+.hero h1, .areaHero h1 { font-size: 36px; margin: 16px 0; line-height: 1.3; }
+.eyebrow { font-size: 14px; letter-spacing: 2px; color: #a4d3cf; }
+.btns { margin-top: 30px; display: flex; gap: 12px; justify-content: center; }
+.btn { padding: 14px 28px; border-radius: 8px; font-weight: bold; background: #fff; color: #215d62; }
+.btn.primary { background: #ffbc00; color: #222; }
+
+/* 검색 영역 */
+.regionSearch { background: #edf6f2; padding: 30px 0; border-bottom: 1px solid #d4e8e1; }
+.searchBox { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.searchControl { position: relative; flex: 1; max-width: 500px; }
+.searchControl input { width: 100%; padding: 16px; border: 2px solid #215d62; border-radius: 8px; font-size: 16px; }
+.searchResults { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid #ccc; border-radius: 8px; max-height: 300px; overflow-y: auto; z-index: 50; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 8px; }
+.searchResults a { display: block; padding: 12px 16px; border-bottom: 1px solid #eee; }
+.searchResults a:hover { background: #f5f5f5; }
+.noResult { padding: 16px; color: #888; text-align: center; }
+
+/* 지도 영역 */
+.kakaoMapGrid, .storeMapGrid { display: flex; gap: 30px; margin-top: 20px; }
+.kakaoMapBox, .storeMapBox { flex: 1; height: 500px; background: #eaeaea; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid #ddd; }
+.mapNeedKey { display: flex; justify-content: center; align-items: center; height: 100%; text-align: center; color: #666; font-size: 15px; }
+.mapInfo { width: 320px; background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #eee; }
+.mapStoreLabel { background: #fff; padding: 6px 12px; border-radius: 20px; border: 2px solid #215d62; font-size: 14px; font-weight: bold; color: #333; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; }
+.mapStoreLabel.vip { border-color: #ffbc00; }
+.mapStoreLabel span { font-size: 11px; font-weight: normal; color: #666; }
+
+/* 목록 (Shop List) 및 카테고리(Category) 영역 */
+.shopList { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.shop { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+.shop:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.shopMain { padding: 24px; display: block; flex: 1; }
+.shopTop { margin-bottom: 12px; display: flex; gap: 8px; align-items: center; }
+.tier { font-size: 12px; font-weight: bold; padding: 4px 8px; border-radius: 4px; background: #eee; color: #666; }
+.tier.vip { background: #fff4d6; color: #b28200; }
+.shop h3 { font-size: 20px; margin-bottom: 8px; color: #111; }
+.shop .addr, .shop .desc { font-size: 14px; color: #666; margin-bottom: 4px; }
+.shopFoot { margin-top: 16px; padding-top: 16px; border-top: 1px dashed #eee; display: flex; justify-content: space-between; color: #215d62; font-size: 15px; }
+.shopActions { display: flex; border-top: 1px solid #eee; }
+.shopActions a { flex: 1; text-align: center; padding: 14px 0; font-weight: bold; font-size: 15px; border-right: 1px solid #eee; }
+.shopActions a:last-child { border-right: none; }
+
+/* 카테고리 그리드 */
+.catgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.card { background: #fff; padding: 30px 24px; border-radius: 12px; border: 1px solid #eee; text-align: center; transition: background 0.2s; }
+.card:hover { background: #edf6f2; border-color: #d4e8e1; }
+.badge { display: inline-block; font-size: 11px; background: #215d62; color: #fff; padding: 4px 8px; border-radius: 4px; margin-bottom: 12px; }
+
+/* 상세 페이지 (서브 페이지) 전용 */
+.detailTop { display: flex; justify-content: space-between; margin-top: 20px; align-items: flex-end; }
+.breadcrumb { color: #a4d3cf; font-size: 14px; margin-bottom: 16px; }
+.priceBox { background: #fff; padding: 20px; border-radius: 12px; color: #333; min-width: 250px; text-align: right; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+.priceBox span { display: block; font-size: 14px; color: #666; }
+.priceBox b { display: block; font-size: 24px; color: #215d62; margin-bottom: 12px; }
+.priceActions { display: flex; gap: 8px; }
+.priceActions a { flex: 1; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; background: #215d62; color: #fff; font-size: 14px; }
+.priceActions a:last-child { background: #f0f0f0; color: #333; }
+.detailBlock { background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px; }
+.detailBlock h2 { font-size: 18px; margin-bottom: 16px; color: #215d62; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+
+/* 푸터 */
+.footer { background: #1a1a1a; color: #888; padding: 60px 0; font-size: 14px; margin-top: 60px; }
+.footer b { color: #fff; font-size: 18px; display: block; margin-bottom: 12px; }
+.contactBtns { margin: 20px 0; display: flex; gap: 12px; }
+.contactBtns a { padding: 8px 16px; border: 1px solid #444; border-radius: 8px; color: #ccc; }
+.bizInfo { display: block; margin-top: 20px; font-size: 13px; color: #555; }
+
+/* 롤링 애니메이션 숨김 처리 */
+.is-hidden { display: none !important; }
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .menu { display: none; } /* 모바일에서 메뉴 간소화 */
+  .kakaoMapGrid, .storeMapGrid { flex-direction: column; }
+  .mapInfo { width: 100%; }
+  .catgrid { grid-template-columns: repeat(2, 1fr); }
+  .detailTop { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .priceBox { width: 100%; text-align: left; }
+  .searchBox { flex-direction: column; align-items: stretch; text-align: center; }
+}
